@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>曹萌萌的个人网页</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: "Arial", sans-serif;
+      }
+
+      .block {
+        height: 50vh;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: #ffffff;
+      }
+
+      /* 修改为横向排列的样式 */
+      .horizontal-text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      /* 左右块的样式 */
+      .split-block {
+        display: flex;
+        width: 100%;
+        margin-top: 0px;
+      }
+
+      h1 {
+        font-family: SimSun, "宋体", sans-serif;
+      }
+
+      .left-block {
+        flex: 1;
+      }
+
+      .right-block {
+        flex: 1;
+      }
+
+      #block1 {
+        background-color: #ffffff;
+        background-image: url("https://i1.hdslb.com/bfs/archive/1929c90a0894f4e254baade91ddbcf9f4f4d0024.jpg"); /* 替换为你的背景图案路径 */
+        background-size: cover;
+        background-position: center;
+        color: #feef1f;
+        font-size: 24px;
+      }
+
+      #block2 {
+        background-color: #ffffff;
+        color: #000000;
+        font-size: 18px;
+      }
+
+      /* 左边放图的样式 */
+      #block2 .left-block {
+        padding: 0px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start; /* 将文本左对齐 */
+      }
+
+      #block2 img {
+        max-width: 100%; /* 确保图片宽度不超过父容器 */
+        height: auto; /* 保持宽高比例 */
+      }
+
+      /* 右边写字的样式 */
+      #block2 .right-block {
+        text-align: left;
+        padding: 0px;
+      }
+
+      #block3 {
+        background-color: #f0f0f0;
+        color: #000000;
+        font-size: 16px;
+      }
+
+      #block4 {
+        background-color: #e0e0e0;
+        color: #000000;
+        font-size: 16px;
+      }
+
+      #block5 {
+        background-color: #d0d0d0;
+        color: #000000;
+        font-size: 16px;
+      }
+
+      #contactBlock {
+        background-color: #1c92b9;
+        display: flex;
+        flex-direction: column;
+      }
+
+      #block3 .horizontal-text p,
+      #block4 .horizontal-text p,
+      #block5 .horizontal-text p {
+        margin: 0;
+      }
+
+      /* 调整 .block 的高度使其更扁平 */
+      .block {
+        height: 40vh; /* 将高度从 50vh 减少到 40vh 或您想要的其他值 */
+      }
+      .contact-button {
+        padding: 10px 20px;
+        background-color: #ecf0f1;
+        color: #333;
+        text-decoration: none;
+        border-radius: 5px;
+        margin-top: 10px;
+        cursor: pointer;
+      }
+      #block3 .horizontal-text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      #block3 button {
+        margin-bottom: 10px;
+        padding: 10px 20px; /* 减小按钮的padding */
+        background-color: #4caf50; /* 绿色 */
+        color: #fff;
+        font-size: 12px; /* 减小字体大小 */
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+
+        /* 信息栏样式 */
+        .information {
+          justify-content: space-between;
+          margin-top: 0.7vh;
+          flex-direction: row; /*盒子排列方向：横向*/
+        }
+
+        /* 按钮悬浮时样式 */
+        .searchButton:hover {
+          background-color: rgba(249, 119, 33, 0.944);
+        }
+      }
+    </style>
+    <script>
+      /*定时调用函数*/
+      setInterval(
+        "document.getElementById('datetime').innerHTML=new Date().toLocaleString();",
+        1000
+      ); /*将用Date函数得到的时间数据放到id为datetime的盒子里，数据1000毫秒刷新一次*/
+    </script>
+  </head>
+  <body>
+    <div class="block" id="block1">
+      <div class="horizontal-text">
+        <!--信息栏-->
+        <div class="flex information">
+          <!--显示当前时间-->
+          <div style="color: antiquewhite; display: inline" class="flex">
+            <b>当前时间：</b>
+            <div style="display: inline; margin: auto" id="datetime"></div>
+          </div>
+          <!--显示当前位置，功能制作失败-->
+          <div style="color: antiquewhite">
+            <div></div>
+          </div>
+        </div>
+        <h1>Miraitowa</h1>
+      </div>
+    </div>
+
+    <div class="block" id="block2">
+      <div class="horizontal-text">
+        <!-- 左边放图 -->
+        <div class="split-block">
+          <div class="left-block" style="text-align: start; padding: 0%">
+            <img
+              src="https://c-ssl.duitang.com/uploads/blog/202008/02/20200802155531_ycpiy.jpg"
+              alt="动漫头像"
+              width="150px"
+              height="150px"
+            />
+          </div>
+          <!-- 右边写字 -->
+          <div class="right-block">
+            <h1>曹萌萌</h1>
+            <p>天津医科大学 2023级临床医学5+3一体化</p>
+            <p>06年 白羊座</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="block" id="block3">
+      <div class="horizontal-text">
+        <h1>兴趣爱好</h1>
+        <p>听歌、羽毛球、网上冲浪</p>
+        <p>我喜欢听孙燕姿、周杰伦，还有一些外国的歌，喜欢看电影解说</p>
+        <p>比如b站的木鱼水心，抖音也是经常看，还有文学类的视频也喜欢看</p>
+
+        <!-- 添加四个按钮 -->
+        <button onclick="showRecommendation('music')">音乐推荐</button>
+        <button onclick="showRecommendation('movie')">电影推荐</button>
+        <button onclick="showRecommendation('book')">书籍推荐</button>
+      </div>
+    </div>
+
+    <div class="block" id="block4">
+      <div class="horizontal-text">
+        <h1>特长</h1>
+        <p>学习能力强、善解人意</p>
+        <p>在生活中我是一个比较慢热的人，虽然看着没那么外向</p>
+        <p>但我心里是积极乐观的，也很喜欢和朋友们玩</p>
+        <p>吃鱼从来不卡刺，哈哈哈</p>
+        <h1>今日份留言</h1>
+
+        <button onclick="showRandomTip()">点击获取</button>
+      </div>
+    </div>
+
+    <div class="block" id="block5">
+      <div class="horizontal-text">
+        <h1>未来规划</h1>
+        <p>
+          掌握专业知识，锤炼自己的思辨能力和解决问题的能力。珍惜与朋友同学们共同走过的青春岁月，愿我们在彼此的陪伴中共同成长。
+          未来的道路上或许会有坎坷，但我深信，有了朋友同学们的支持和鼓励，我们定能携手前行，共同创造属于我们的辉煌。
+        </p>
+      </div>
+    </div>
+
+    <div class="block" id="contactBlock">
+      <div class="horizontal-text">
+        <h1>联系方式</h1>
+        <a href="tel:18238495918" class="contact-button">拨打电话</a>
+        <a href="mailto:3329918529@qq.com" class="contact-button">发送邮件</a>
+        <p></p>
+        <p></p>
+        <p></p>
+
+        <p>V1.0 @2024</p>
+      </div>
+    </div>
+
+    <!-- JavaScript代码 -->
+    <script>
+      function showRecommendation(category) {
+        // 根据按钮的类别，显示相应的提示窗内容
+        let recommendation = "";
+
+        switch (category) {
+          case "music":
+            recommendation =
+              "李荣浩、具岛直子、告五人、比伯、加我网易云：18238495918";
+            break;
+          case "movie":
+            recommendation = "怦然心动、返老还童、肖申克的救赎";
+            break;
+          case "book":
+            recommendation = "三毛、追风筝的人、偷影子的人";
+            break;
+          default:
+            recommendation = "暂无推荐内容";
+        }
+
+        // 弹出提示窗
+        alert(recommendation);
+      }
+    </script>
+    <script>
+      function showRandomTip() {
+        // 提示语数组
+        var tips = [
+          "你总是那么乐观，能够感染身边的每个人。",
+          "你的聪明才智真的让人刮目相看。",
+          "你的坚持和努力让我深感钦佩。",
+          "你是一个非常有创意和想法的人。",
+          "你的善良和关心总是让人感到温暖。",
+          "你的微笑是这个世界上最美丽的风景之一。",
+          "你总是那么有耐心，愿意倾听别人的需求。",
+          "你的积极态度真的能够激励身边的每个人。",
+          "你的勇气和决心是我所敬佩的。",
+          "你有一颗善良的心，总是愿意帮助他人。",
+          "你的工作态度一直都很认真和努力。",
+          "你的幽默感总是能够为周围的人带来快乐。",
+          "你总是那么谦虚，即使取得了很多成就。",
+          "你的坚韧不拔是你成功的关键之一。",
+          "你拥有一种让人安心的氛围，让人觉得自己被接纳。",
+          "你的团队合作精神总是能够带领大家一同前进。",
+        ];
+
+        // 随机选择一个提示语
+        var randomIndex = Math.floor(Math.random() * tips.length);
+        var randomTip = tips[randomIndex];
+
+        // 弹出提示框显示随机提示语
+        alert(randomTip);
+      }
+    </script>
+  </body>
+</html>
